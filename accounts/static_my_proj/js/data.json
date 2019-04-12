@@ -1,0 +1,26 @@
+[ 
+ {
+  "program":"B.TECH",
+  "department":"ELECTRONICS AND COMMUNICATION",
+  "semester":"I",
+  "subjects":["ASN","Maths","EDC","OOPS","CSS"]
+  },
+ {
+  "program":"M.TECH",
+  "department":"COMPUTER SCIENCE",
+  "semester":"I",
+  "subjects":["CP","OOPS"]
+  },
+ {
+  "program":"B.TECH",
+  "department":"ELECTRONICS AND COMMUNICATION",
+  "semester":"II",
+  "subjects":["ACS","EMI","AIC"]
+  },
+ {
+  "program":"M.TECH",
+  "department":"COMPUTER SCIENCE",
+  "semester":"II",
+  "subjects":["DSA","DBMS"]
+  }
+]
