@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href='{% static "css/bootstrap.min.css" %}'>
+    <script src='{% static "js/all.js"%}'></script>
+    <link rel="stylesheet" href='{% static "css/ADMINISTRATIVE_REGISTER.css" %}'>
+    <link rel="stylesheet" href='{% static "css/all.min.css" %}'>
+</head>
+<body>
+    <!--Start of Title section-->
+    <header>
+            <div id='header' class="container-fluid bg-primary">
+                <div class="row text-center text-white">
+                    <div class="col-sm-12 col-md-9 col-xs-9">
+                        <h2>Dr B R Ambedkar National Institute of Technology</h2>
+                        <h2> Jalandhar</h2>
+                    </div>
+                    <div class="col-sm-12 col-md-3 col-xs-3">
+                        <img src="{% static 'img/NITJ_Logo.jpg' %}">
+                    </div>
+                </div>
+            </div>
+        </header><br>
+        <!--End of title section-->
+        <section>
+            <div class="container border">
+                <div class="row">
+                    <div class="col text-center">
+                            <h4><u>Add Subject</u></h4>
+                    </div>
+                </div>
+                {% if messages %}
+                    <ul class="messages">
+                    {% for message in messages %}
+                        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                    {% endfor %}
+                    </ul>
+                {% endif %}
+                <div class="row">
+                    <div class="col">
+                        <form method="post" action="{% url 'add_subject' %}">{% csrf_token %}
+                            <label for=""><h6>Subject name:</h6></label>
+                            <input type="text" name="name" id="" class="form-control"><br>
+                            <label for=""><h6>Subject code:</h6></label>
+                            <input type="text" name="code" id="" class="form-control"><br>
+                            <label for=""><h6>Program:</h6></label>
+                            <input type="text" name="program" id="" class="form-control"><br>
+                            <label for=""><h6>Branch</h6></label>
+                            <input type="text" name="branch" id="" class="form-control"><br>
+                            <label for=""><h6>Year</h6></label>
+                            <input type="text" name="year" id="" class="form-control"><br>
+                            <label for=""><h6>Semester</h6></label>
+                            <input type="text" name="semester" id="" class="form-control"><br>
+                            <button type="submit" class="btn btn-primary btn-block">Add</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script src='{% static "js/jquery-3.3.1.min.js"%}'></script>
+    <script src='{% static "js/bootstrap.bundle.min.js"%}'></script>
+
+</body>
+</html>

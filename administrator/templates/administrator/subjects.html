@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Subjects</title>
+    <link rel="stylesheet" href='{% static "css/bootstrap.min.css" %}'>
+    <script src='{% static "js/all.js"%}'></script>
+    <link rel="stylesheet" href='{% static "css/ADMINISTRATIVE_REGISTER.css" %}'>
+    <link rel="stylesheet" href='{% static "css/all.min.css" %}'>
+</head>
+<body>
+    <!--Start of Title section-->
+    <header>
+            <div id='header' class="container-fluid bg-primary">
+                <div class="row text-center text-white">
+                    <div class="col-sm-12 col-md-9 col-xs-9">
+                        <h2>Dr B R Ambedkar National Institute of Technology</h2>
+                        <h2> Jalandhar</h2>
+                    </div>
+                    <div class="col-sm-12 col-md-3 col-xs-3">
+                        <img src="{% static 'img/NITJ_Logo.jpg' %}">
+                    </div>
+                </div>
+            </div>
+        </header><br>
+        <!--End of title section-->
+        <section>
+            <div class="container border">
+                <div class="row">
+                    <div class="col text-center">
+                            <h4><u>Subjects</u></h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        {% for s in subject %}
+                            <!--below line will be the rows of table. and place a filter bar above the list .filter forms will
+                            have branch year programme and semester-->
+                            {{ s.code }} {{s.name}} {{s.program}} {{s.branch}} <a href="{{s.get_edit_url}}">edit</a>
+                            <form><input type="submit" value="Submit" id="confirm" value="{{s.code}}"/>delete </form>
+                            <br>
+                        {% endfor %}
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script src='{% static "js/jquery-3.3.1.min.js"%}'></script>
+    <script src='{% static "js/bootstrap.bundle.min.js"%}'></script>
+
+</body>
+</html>
